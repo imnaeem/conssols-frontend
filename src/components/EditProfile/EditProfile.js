@@ -27,6 +27,7 @@ import { useSelector } from "react-redux";
 import { uploadImage } from "../UploadImage";
 import loadingUser from "../../images/loading-user.png";
 import loadingIcon from "../../images/loading.gif";
+import ImageWithFallback from "../ImageWithFallback";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 

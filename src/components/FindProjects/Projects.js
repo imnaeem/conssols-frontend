@@ -29,6 +29,8 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useDispatch } from "react-redux";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { useNavigate } from "react-router-dom";
+import loadingImage from "../../images/loading-image.png";
+import ImageWithFallback from "../ImageWithFallback";
 
 const useStyles = {
   detailsBox: {
@@ -46,9 +48,6 @@ const useStyles = {
     marginLeft: "10px",
   },
 };
-
-const loadingImage =
-  "https://res.cloudinary.com/dxe6wambc/image/upload/v1658663558/fdz6ekdccu6dpwedvqzq.png";
 
 const Projects = ({ project }) => {
   const { title, location, rate, createdAt, details, _id, projectImage } =
@@ -177,9 +176,10 @@ const Projects = ({ project }) => {
                   verticalAlign: "middle",
                 }}
               >
-                <Box
-                  component="img"
-                  src={projectImage === "" ? loadingImage : projectImage}
+                <ImageWithFallback
+                  src={projectImage}
+                  fallbackSrc={loadingImage}
+                  alt="Project image"
                   sx={{
                     maxHeight: "85px",
                     maxWidth: "85px",
